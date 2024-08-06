@@ -1,0 +1,29 @@
+.container h3 {
+    color: #622D25;
+    font-size: 16px;
+}
+
+.container {
+    width: 95%;
+    margin: auto;
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.volunteer {
+    font-family: var(--font-finlandacia);
+    color: white;
+    font-size: 14px;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-weight: 700;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    background-color: #402a23;
+}
+
+.volunteer:active {
+    box-shadow: none;
+}

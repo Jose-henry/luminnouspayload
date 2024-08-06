@@ -1,0 +1,123 @@
+.footer_container {
+    background-color: white;
+    padding: 35px 0;
+    width: 100%;
+    z-index: 30;
+}
+
+.wrapper {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input input {
+    border: 2px solid #402a23;
+    color: #402a23;
+    font-family: var(--font-finlandacia);
+    font-size: 13px;
+    width: 250px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    outline: none;
+}
+
+.input {
+    display: flex;
+    gap: 2%;
+}
+
+.subscribe {
+    background-color: #402a23;
+    font-family: var(--font-finlandacia);
+    padding: 8px 30px;
+    color: white;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+    font-weight: 700;
+    font-size: 13px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.subscribe:active {
+    box-shadow: none;
+}
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.newsletter p {
+    font-size: 14px;
+    color: #402a23;
+    margin-bottom: 10px;
+}
+
+.nav p {
+    color: #402a23;
+    font-size: 13px;
+    opacity: 50%;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.theLinks {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.link {
+    font-family: var(--font-finlandacia);
+    font-size: 14px;
+    font-weight: 600;
+    color: #622D25;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.status {
+    font-size: 12px;
+    opacity: 60%;
+    font-family: var(--font-finlandacia);
+}
+
+.status_container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -20px;
+}
+
+.clear_status {
+    margin-left: 8px;
+    background: none;
+    border: none;
+    color: blue;
+    cursor: pointer;
+    font-size: 12px;
+    text-decoration: underline;
+}

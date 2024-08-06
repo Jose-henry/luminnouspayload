@@ -1,0 +1,65 @@
+/* Container for the gallery */
+.main_container {
+    width: 100%;
+    overflow: hidden; /* Hide the overflow to make the sliding effect look seamless */
+    display: flex;
+    gap: 10px;
+    position: relative; /* Necessary for the animation */
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* The individual picture containers */
+.pic {
+    height: 300px;
+    width: 400px; /* Set a fixed width for each pic */
+    flex: 0 0 auto; /* Prevent flex items from shrinking or growing */
+    background-color: white; /* Just for visibility, adjust as needed */
+    display: grid;
+    grid-template-rows: 7fr 1fr;
+    padding-top: 20px;
+}
+
+.pic p {
+    text-align: center;
+    font-size: 14px;
+    color: #402a23;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+/* Animation to slide the pictures */
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Wrapping the sliding animation */
+.slide {
+    display: flex;
+    animation: slide 40s linear infinite; /* Adjust the duration for the speed */
+}
+
+.main_container h3 {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    font-size: 45px;
+    opacity: 50%;
+    color: #622D25;
+}
+
+.pic div {
+    width: 90%;
+    margin: auto;
+    height: 100%;
+    border: 1px solid white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}

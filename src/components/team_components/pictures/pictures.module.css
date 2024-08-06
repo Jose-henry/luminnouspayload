@@ -1,0 +1,64 @@
+.team_div h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #622D25;
+    margin-bottom: 20px;
+    margin-top: 60px;
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4.5%;
+    align-items: flex-start;
+    justify-content: center;
+    row-gap: 20px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.team_div {
+    width: 95%;
+    margin: auto;
+}
+
+.team_div > div {
+    margin-bottom: 70px;
+}
+
+/* Initial state */
+.details {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 1.3s ease;
+}
+
+.details.fadeIn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.details h3 {
+    font-size: 16px;
+    color: #622D25;
+    line-height: normal;
+}
+
+.details p {
+    font-size: 14px;
+    color: #622D25;
+}

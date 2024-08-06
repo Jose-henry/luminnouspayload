@@ -1,0 +1,109 @@
+.main_container {
+    width: 1000px;
+    border-radius: 3px;
+    background-color: #FBF6EF;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    padding: 80px 20px;
+    position: relative;
+}
+
+.div2 {
+    width: 60%;
+    height: 100%;
+    margin-left: auto;
+}
+
+.div2 form {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #E5C9A2;
+    border-radius: 3px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.picture {
+    height: 80%;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -100px;
+    border-radius: 3px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}  
+
+.donate_text {
+    text-align: center;
+    font-size: 40px;
+    color: #622D25;
+    margin-bottom: 10px;
+}
+
+.p {
+    font-size: 17px;
+    color: #622D25;
+    line-height: 29px;
+}
+
+.main_container h3 {
+    color: #622D25;
+    font-size: 18px;
+}
+
+.input_fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.input {
+    padding: 6px;
+    border-radius: 2px;
+    font-family: var(--font-finlandacia);
+    font-size: 13px;
+    color: #622D25;
+    outline: none;
+    border: 1px solid #622D25;
+}
+
+.btn {
+    font-size: 12px;
+    background-color: #622D25;
+    color: white;
+    padding: 5px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.btn:active {
+    box-shadow: none;
+}
+
+.message {
+    margin-top: 10px;
+    color: #622D25;
+    font-size: 13.5px;
+}
+
+.message_container {
+    display: flex;
+    gap: 5px;
+}
+
+.clear_btn {
+    background-color: #622D25;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 1px 8px;
+    line-height: normal;
+    color: white;
+    align-self: self-end;
+    font-size: 13px;
+    border-radius: 3px;
+}

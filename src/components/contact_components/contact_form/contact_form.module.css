@@ -1,0 +1,213 @@
+.main_container {
+    width: 90%;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.form_container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.text_container h2 {
+    color: #622D25;
+    line-height: normal;
+    font-size: 45px;
+}
+.text_container p {
+    color: #622D25;
+    line-height: 25px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.form > div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.form label {
+    font-family: var(--font-finlandacia);
+    color: #222831;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.form input {
+    width: 85%;
+    padding: 12px;
+    border-radius: 3px;
+    font-family: var(--font-finlandacia);
+    font-size: 13px;
+    outline: none;
+    color: #622D25;
+}
+
+.form textarea {
+    width: 85%;
+    padding: 12px;
+    height: 300px;
+    border-radius: 3px;
+    font-size: 13px;
+    font-family: var(--font-finlandacia);
+    outline: none;
+    color: #622D25;
+}
+
+.cont_img {
+    height: 100%;
+    width: 100%;
+    background-color: #FBF6EF;
+    border-radius: 3px;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    overflow: hidden;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form button {
+    background-color: #402a23;
+    font-size: 13px;
+    padding: 12px;
+    width: 85%;
+    border-radius: 4px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 12px;
+    font-weight: 700;
+    color: white;
+    border: 2px solid #622D25;
+}
+
+.form button:active {
+    box-shadow: none;
+}
+
+.others p {
+    font-size: 13px;
+    color: #402a23;
+    line-height: normal;
+}
+
+.others div {
+    display: flex;
+    align-items: end;
+    gap: 7px;
+    margin-bottom: 5px;
+}
+
+.others {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    padding-left: 15px;
+}
+
+.others h3 {
+    color: #402a23;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.l {
+    font-size: 14px;
+    color: #402a23;
+    font-family: var(--font-finlandacia);
+}
+
+.status_container {
+    margin-top: 6px;
+}
+
+.status_message {
+    font-size: 13px;
+    color: #402a23;
+    font-family: var(--font-finlandacia);
+}
+
+@media screen and (max-width: 1165px) {
+    .text_container h2 {
+        font-size: 40;
+    }
+
+    .text_container p {
+        font-size: 15px;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .text_container h2 {
+        font-size: 35px;
+    }
+}
+
+@media screen and (max-width: 875px) {
+    .text_container h2 {
+        font-size: 30px;
+    }
+
+    .text_container p {
+        font-size: 14px;
+    }
+
+    .form label {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .text_container h2 {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 849px) {
+    .form_container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cont_img {
+        display: none;
+    }
+
+    .form input {
+        width: 95%;
+    }
+    
+    .form textarea {
+        width: 95%;
+    }
+
+    .form button {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 515px) {
+    .form input {
+        width: 100%;
+    }
+    
+    .form textarea {
+        width: 100%;
+    }
+
+    .form button {
+        width: 100%;
+        padding: 13.5px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .text_container h2 {
+        text-align: center;
+    }
+
+    .text_container p {
+        text-align: center;
+    }
+}

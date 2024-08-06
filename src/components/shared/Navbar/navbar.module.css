@@ -1,0 +1,133 @@
+.theLinks {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main_container {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    cursor: pointer;
+    display: none; /* Initially hidden */
+}
+
+.link {
+    font-family: var(--font-finlandacia);
+    font-size: 14px;
+    font-weight: 600;
+    color: #622D25;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.donate {
+    background-color: #402a23;
+    font-family: var(--font-finlandacia);
+    padding: 6px 40px;
+    color: white;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.donate:hover {
+    box-shadow: 1px 1px 2px 0px #ffe76a;
+}
+
+.donate:active {
+    box-shadow: none;
+}
+
+.close {
+    display: none;
+    cursor: pointer;
+}
+
+.small {
+    position: absolute;
+    background-color: white;
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    right: 0px;
+    padding: 10px;
+    gap: 12px;
+    top: 55px;
+    width: 100%;
+    height: 210px;
+}
+
+.show {
+    display: flex; /* Show the menu when the .show class is added */
+}
+
+._link {
+    font-size: 12px;
+    font-family: var(--font-finlandacia);
+    color: #622D25;
+}
+
+._link:hover {
+    color: black;
+}
+
+.design {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #622D25;
+    padding: 5px;
+}
+
+.design:hover {
+    background-color: #ececec;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 2px solid #622D25;
+}
+
+.popUp {
+    position: fixed;
+    top: 10px;
+    z-index: 50;
+    width: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px; 
+    background-color: #622D25;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    border: 2px solid #622D25;
+    border-radius: 2px;
+}
+
+.popUp.slideIn {
+    display: block;
+    animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50%) translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+.p1 {
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.p2 {
+    color: white;
+    font-size: 13.5px;
+}

@@ -1,0 +1,274 @@
+.btn {
+    width: 90px;
+    height: 45px;
+    background-color: #E5C9A2;
+    border: 2px solid #773529;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.main_container {
+    background-color: #FBF6EF;
+    border-radius: 3px;
+    position: relative;
+    width: 95%;
+    margin: auto;
+    padding: 30px;
+}
+
+.testimonial_bg {
+    position: absolute;
+    z-index: -10;
+    top: -300px;
+    left: 150px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 24px;
+}
+
+.carousel_container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel_item {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    display: none;
+}
+
+.carousel_item.active {
+    opacity: 1;
+    display: block;
+}
+
+.testimonyProp {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.dot_active {
+    background-color: #622D25;
+}
+
+.dots {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.testimony {
+    font-size: 18px;
+    color: #773529;
+    font-weight: 500;
+    line-height: 33px;
+}
+
+.name_info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.name {
+    font-size: 28px;
+    color: #622D25;
+}
+
+.info {
+    font-size: 14px;
+}
+
+@media screen and (max-width: 1110px) {
+    /* CSS rules for screens with a maximum width of 1000px */
+    .testimony {
+        font-size: 18px;
+    }
+
+    .name {
+        font-size: 26px;
+    }
+
+    .main_container {
+        padding: 25px;
+    }
+}
+
+@media screen and (max-width: 905px) {
+    /* CSS rules for screens with a maximum width of 1000px */
+    .testimony {
+        font-size: 17px;
+    }
+
+    .name {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 867px) {
+    /* CSS rules for screens with a maximum width of 1000px */
+    .testimonial_bg {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media screen and (max-width: 816px) {
+    /* CSS rules for screens with a maximum width of 1000px */
+
+    .main_container {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    /* CSS rules for screens with a maximum width of 1000px */
+    .btn {
+        width: 85px;
+        height: 40px;
+    }
+
+    .leftBtn, .rightBtn {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    /* CSS rules for screens with a maximum width of 1000px */
+    .main_container {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    /* CSS rules for screens with a maximum width of 1000px */
+    .btn {
+        width: 80px;
+        height: 35px;
+    }
+
+    .leftBtn, .rightBtn {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    /* CSS rules for screens with a maximum width of 1000px */
+    .main_container {
+        margin-top: 350px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    /* CSS rules for screens with a maximum width of 1000px */
+    .main_container {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 393px) {
+    /* CSS rules for screens with a maximum width of 1000px */
+    .testimonial_bg {
+        top: -250px;
+    }
+
+    .main_container {
+        margin-top: 280px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    /* CSS rules for screens with a maximum width of 1000px */
+    .testimonyProp {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 365px) {
+    .testimony {
+        text-align: center;
+    }
+
+    .name, .info {
+        text-align: center;
+    }
+
+    .btn {
+        width: 75px;
+        height: 30px;
+    }
+
+    .navigation {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 327px) {
+    /* CSS rules for screens with a maximum width of 1000px */
+    .testimony {
+        font-size: 16px;
+        line-height: 32px;
+    }
+
+    .name {
+        font-size: 23px;
+    }
+}
+
+@media screen and (max-width: 325px) {
+    /* CSS rules for screens with a maximum width of 1000px */
+    .testimonial_bg {
+        top: -230px;
+    }
+
+    .main_container {
+        margin-top: 260px;
+    }
+}
+
+@media screen and (max-width: 295px) {
+    /* CSS rules for screens with a maximum width of 1000px */
+    .testimonial_bg {
+        top: -210px;
+    }
+
+    .main_container {
+        margin-top: 240px;
+    }
+}
+
+@media screen and (max-width: 265px) {
+    /* CSS rules for screens with a maximum width of 1000px */
+    .testimonial_bg {
+        top: -190px;
+    }
+
+    .main_container {
+        margin-top: 210px;
+    }
+
+    .testimony {
+        font-size: 15.5px;
+    }
+}

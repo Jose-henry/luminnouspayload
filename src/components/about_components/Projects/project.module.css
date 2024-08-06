@@ -1,0 +1,128 @@
+.main_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 85%;
+    margin: auto;
+    margin-top: 100px;
+    align-items: center;
+    row-gap: 5%;
+    position: relative;
+}
+
+.main_container h2 {
+    text-align: center;
+    font-size: 40px;
+    color: #622D25;
+    margin-bottom: 10px;
+}
+
+.main_container h3 {
+    font-size: 23px;
+}
+
+.main_container h4 {
+    font-size: 16px;
+    font-family: var(--font-finlandacia);
+}
+
+.line {
+    height: 4px;
+    background-color: #622D25;
+    position: absolute;
+    width: 1800px;
+    top: 231px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -10;
+}
+
+.text_div {
+    background-color: white;
+    padding: 80px 0;
+    border-radius: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.card {
+    height: 500px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card3 {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    height: 600px;
+    align-self: center;
+    position: relative;
+}
+
+.card4 {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.view {
+    font-family: var(--font-finlandacia);
+    color: #142d4c;
+    font-size: 15px;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.view:hover {
+    text-decoration: underline;
+}
+
+.view:active {
+    text-decoration: none;
+}
+
+.project {
+    border: 2px solid #622D25;
+    padding: 8px 15px;
+    font-family: var(--font-finlandacia);
+    align-self: start;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 3px;
+}
+
+.project:hover {
+    background-color: #E5C9A2;
+}
+
+.project:active {
+    background-color: #f6eedf;
+}
+
+.first_project {
+    background-color: #f6eedf;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.first_project p {
+    font-size: 15px;
+    line-height: 28px;
+}
+
+.second_project {
+    background-color: #f6eedf;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.second_project p {
+    font-size: 15px;
+    line-height: 28px;
+}

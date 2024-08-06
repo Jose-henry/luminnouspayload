@@ -1,0 +1,111 @@
+.main_container {
+    width: 95%;
+    margin: auto;
+}
+
+.main_container h2 {
+    color: #402a23;
+    font-size: 35px;
+}
+
+.text {
+    color: #402a23;
+    font-size: 15px;
+}
+
+.the_projects {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 35px;
+    padding-top: 25px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.project {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.project div {
+    height: 350px;
+    width: 100%;
+    position: relative;
+}
+
+.div1 {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.div2 {
+    margin-left: 10%;
+    border-right: 10px solid white;
+    overflow: hidden;
+}
+
+.div3 {
+    border-left: 10px solid white;
+    overflow: hidden;
+}
+
+.style1 {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.style2 {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.style3 {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.style4 {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.project h3 {
+    color: #622D25;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.project p {
+    font-size: 15px;
+    color: #402a23;
+}
+
+.btn {
+    background-color: #402a23;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-finlandacia);
+    justify-self: start;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+    box-shadow: none;
+}
+
+.project h4 {
+    color: #622D25;
+    font-family: var(--font-finlandacia);
+    font-size: 14px;
+}

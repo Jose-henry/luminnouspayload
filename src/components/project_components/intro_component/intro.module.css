@@ -1,0 +1,64 @@
+.main_container {
+    width: 100%;
+    background-color: #fbf2d5;
+    padding: 100px 10px;
+    position: relative; /* Add this */
+}
+
+.main_container > div {
+    width: 85%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.main_container h2 {
+    font-size: 40px;
+    color: #622D25;
+    line-height: 45px;
+}
+
+.main_container p {
+    color: #622D25;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.main_container span {
+    color: white;
+    display: block;
+    padding-left: 3%;
+    text-shadow: 3px 3px 4px #622D25;
+}
+
+.container {
+    position: relative;
+}
+
+.color {
+    background-color: #622D25;
+    margin-top: 10px;
+    padding: 10px;
+    width: -moz-fit-content; /* Add this */
+    width: fit-content;
+    z-index: 2;
+    position: relative;
+}
+
+.line {
+    width: 1000px;
+    height: 3px;
+    background-color: #773529;
+    box-shadow: 5px 5px 0px 0px white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    z-index: 1;
+}
+
+
+.color p {
+    color: white;
+    font-size: 14px;
+}

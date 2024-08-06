@@ -1,0 +1,57 @@
+/* global.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  background-color: #ffe76a;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: var(--font-finlandacia);
+}
+
+h2 {
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 67.2px;
+  font-family: var(--font-finlandacia);
+}
+
+h3 {
+  font-optical-sizing: auto;
+  line-height: 31.6px;
+  font-weight: 700;
+  font-family: var(--font-finlandacia);
+}
+
+p {
+  font-optical-sizing: auto;
+  font-family: var(--font-finlandacia);
+}
+
+button {
+  font-family: var(--font-finlandacia);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

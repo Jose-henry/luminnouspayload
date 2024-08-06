@@ -1,0 +1,57 @@
+.wrapper {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.wrapper h2 {
+    color: #402a23;
+    font-size: 30px;
+}
+
+.wrapper p {
+    color: #402a23;
+    font-size: 16px;
+}
+
+.link {
+    background-color: #402a23;
+    font-family: var(--font-finlandacia);
+    padding: 8px 50px;
+    color: white;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+    font-weight: 700;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    display: block;
+}
+
+.love {
+    position: relative;
+    height: 300px;
+    width: 200px;
+    display: flex;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 7px 11px rgba(0, 0, 0, 0.2);
+}
+
+.loveDiv {
+    display: flex;
+    justify-content: center;
+    gap: 3%;
+}
+
+.textDiv {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.love2 {
+    position: relative;
+    top: 30px;
+}

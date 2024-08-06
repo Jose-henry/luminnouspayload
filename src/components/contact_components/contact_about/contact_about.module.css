@@ -1,0 +1,43 @@
+.container {
+    width: 90%;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 80px;
+}
+
+.container p {
+    font-size: 14px;
+    color: #622D25;
+}
+
+.link {
+    background-color: #FBF6EF;
+    margin-left: 15px;
+    padding: 5px 20px;
+    border-radius: 3px;
+    font-weight: 700;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.link:active {
+    box-shadow: none;
+}
+
+@media screen and (max-width: 1165px) {
+    .container p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 875px) {
+    .container p {
+        font-size: 13.5px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .container p {
+        text-align: center;
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,46 @@
+.main_container {
+    background-color: #f6eedf;
+    margin-top: 100px;
+    display: grid;
+    padding: 50px;
+    grid-template-columns: 1.8fr 2fr;
+    gap: 2%;
+    border-top: 1px solid #d3d6db;
+    border-bottom: 1px solid #d3d6db;
+}
+
+.main_container h2 {
+    color: #402a23;
+    font-size: 40px;
+}
+
+.main_container p {
+    color: #402a23;
+    line-height: 30px;
+}
+
+.read {
+    font-family: var(--font-finlandacia);
+    font-size: 15px;
+    color: #142d4c;
+    margin-top: 20px;
+}
+
+.read:hover {
+    text-decoration: underline;
+}
+
+.read:active {
+    text-decoration: none;
+}
+
+.div2 {
+    height: 500px;
+    width: 100%;
+}
+
+.youtube {
+    border-radius: 3px;
+    height: 500px;
+    width: 100%;
+}
