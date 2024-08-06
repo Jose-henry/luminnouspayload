@@ -1,12 +1,33 @@
 'use server'
 
-import { fetchImageWithPlaceholder } from "@/lib/actions/images/images.action";
+import { fetchImageWithPlaceholder, preload } from "@/lib/actions/images/images.action";
 import ClientProject from "./ClientProject";
 
 
 
 
 export default async function ServerProject() {
+
+     // Preload the image data
+    preload('education'),
+    preload('agriculture'),
+    preload('water'),
+    preload('fishing'),
+    preload('roads'),
+    preload('market-life'),
+    preload('education1'),
+    preload('farming1'),
+    preload('water1'),
+    preload('fishing1'),
+    preload('road1'),
+    preload('market1'),
+    preload('gberefu1'),
+    preload('blackout'),
+    preload('education'),
+    preload('teach')
+
+
+
     const [
       { src: gallerysrc1, blurData: galleryblurData1 },
       { src: gallerysrc2, blurData: galleryblurData2 },

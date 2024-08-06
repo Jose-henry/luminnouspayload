@@ -1,9 +1,20 @@
 'use server';
 
 import ClientAbout from "@/components/about_components/ClientAbout";
-import { fetchImageWithPlaceholder } from "@/lib/actions/images/images.action";
+import { fetchImageWithPlaceholder, preload } from "@/lib/actions/images/images.action";
+
 
 export default async function ServerAbout() {
+
+  // Preload the image data
+  preload('child');
+  preload('blackout');
+  preload('pretty');
+  preload('teach');
+  preload('rural1');
+  preload('rural2');
+  preload('rural3');
+  preload('rural4');
   const [
     { src: donatesrc, blurData: donateblurData },
     { src: projectsrc1, blurData: projectblurData1 },
@@ -13,7 +24,7 @@ export default async function ServerAbout() {
     { src: absrc2, blurData: abblurData2 },
     { src: absrc3, blurData: abblurData3 },
     { src: absrc4, blurData: abblurData4 },
-] = await Promise.all([
+  ] = await Promise.all([
     fetchImageWithPlaceholder('child'),
     fetchImageWithPlaceholder('blackout'),
     fetchImageWithPlaceholder('pretty'),

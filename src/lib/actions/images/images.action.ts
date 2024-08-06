@@ -3,8 +3,13 @@ import { getPayloadHMR } from '@payloadcms/next/utilities';
 import {getPayload} from 'payload'
 import configPromise from '@payload-config';
 import { getPlaiceholder } from 'plaiceholder';
+import { cache } from 'react'
 
-export const fetchImageWithPlaceholder = async (alt: string) => {
+export const preload = (alt: string) => {
+  void fetchImageWithPlaceholder(alt);
+};
+
+export const fetchImageWithPlaceholder = cache(async (alt: string) => {
   try {
     const payload = await getPayload({ config: configPromise });
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -34,5 +39,5 @@ export const fetchImageWithPlaceholder = async (alt: string) => {
     return { src: '', blurData: '' };
     
   }
-};
+});
 
