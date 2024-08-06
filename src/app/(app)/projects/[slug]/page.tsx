@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+/* import { notFound } from "next/navigation";
 import configPromise from '@payload-config'
 import { getPayload } from 'payload' //you can use this or the one below
 // import { getPayloadHMR } from '@payloadcms/next/utilities' //you can use this or the one above
@@ -48,3 +48,13 @@ export default async function Projects({ params }: { params: { slug: string } })
   )
 }
 
+ */
+
+
+export default function Projects() {
+
+
+  return(
+    <h1>Dynamic post</h1>
+  )
+}
