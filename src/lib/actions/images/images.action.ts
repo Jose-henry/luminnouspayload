@@ -11,7 +11,7 @@ export const fetchImageWithPlaceholder = async (alt: string) => {
     const data = await payload.find({
       collection: 'media',
       where: { alt: { equals: alt } },
-    });
+    })
 
     if (data.docs && data.docs.length > 0) {
       const firstDoc = data.docs[0]
