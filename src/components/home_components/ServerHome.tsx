@@ -3,12 +3,12 @@
 import { fetchImageWithPlaceholder } from "@/lib/actions/images/images.action";
 import Hero from "./HeroSection/hero";
 import About from "./AboutSection/about";
-import Mission from "./MissionStatement/mission";
 import Impact from "./ImpactSection/impact";
 import Contribute from "./ContributeSection/contribute";
 import PageText2 from "../PageText/pageText2";
 import Improve from "./ImproveSection/improve";
 import Update from "./UpdateSection/update";
+import Mission from "./MissionStatement/mission";
 
 
 export default async function ServerHome() {

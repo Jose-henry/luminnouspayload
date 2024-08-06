@@ -1,7 +1,7 @@
 'use client';
 import Image from "next/image";
 import styles from "./gallery.module.css";
-import { Suspense } from "react"
+import React, { Suspense } from "react"
 import Default from '@/assets/default.jpg'
 export const experimental_ppr = true
 

@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import styles from './outline.module.css';
 import Link from 'next/link';
-import { Suspense } from "react"
+import React, { Suspense } from "react"
 import Default from '@/assets/default.jpg'
 
 

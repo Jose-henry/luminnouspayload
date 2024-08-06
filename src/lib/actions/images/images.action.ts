@@ -3,7 +3,6 @@ import { getPayloadHMR } from '@payloadcms/next/utilities';
 import {getPayload} from 'payload'
 import configPromise from '@payload-config';
 import { getPlaiceholder } from 'plaiceholder';
-import Default from '@/assets/default.jpg'
 
 export const fetchImageWithPlaceholder = async (alt: string) => {
   try {
@@ -37,15 +36,3 @@ export const fetchImageWithPlaceholder = async (alt: string) => {
   }
 };
 
-export const projectImages = async () => {
-  try {
-    const imageAlts = ['blackout', 'pretty', 'teach'];
-    const imagePromises = imageAlts.map(fetchImageWithPlaceholder);
-    const images = await Promise.all(imagePromises);
-    //console.log('Images', images);
-    return images;
-  } catch (err: any) {
-    console.error('Error fetching project images:', err.message);
-    throw new Error(err.message);
-  }
-};

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import Gallery from "@/components/project_components/gallery_component/gallery";
 import Intro from "@/components/project_components/intro_component/intro";

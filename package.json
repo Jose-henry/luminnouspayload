@@ -3,10 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "cross-env NODE_OPTIONS=\"${NODE_OPTIONS} --no-deprecation\" next dev",
+    "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "lint": "next lint",
+    "ci": "payload migrate && pnpm build",
+    "generate:types": "payload generate:types",
+    "generate:schema": "payload-graphql generate:schema",
+    "generate:graphQLSchema": "cross-env NODE_OPTIONS=--no-deprecation payload generate:graphql-schema",
+    "payload": "cross-env NODE_OPTIONS=--no-deprecation payload"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -17,6 +22,8 @@
     "@payloadcms/richtext-lexical": "3.0.0-beta.69",
     "@plaiceholder/next": "^3.0.0",
     "@sendgrid/mail": "^8.1.3",
+    "@swc-node/core": "^1.13.3",
+    "@swc/core": "^1.7.6",
     "@tabler/icons-react": "^3.11.0",
     "@types/leaflet": "^1.9.12",
     "@types/react": "^18.3.3",
@@ -40,9 +47,10 @@
     "react-dom": "^19.0.0-rc-fb9a90fa48-20240614",
     "react-router-dom": "^6.25.1",
     "scrollreveal": "^4.0.9",
-    "sharp": "^0.33.4",
+    "sharp": "0.33.4",
     "tailwind-merge": "^2.4.0",
-    "typewriter-effect": "^2.21.0"
+    "typewriter-effect": "^2.21.0",
+    "cross-env": "^7.0.3"
   },
   "devDependencies": {
     "@types/mailchimp__mailchimp_marketing": "^3.0.20",

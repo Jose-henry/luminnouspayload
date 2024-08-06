@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Project from "@/components/about_components/Projects/project";
 import AB from "@/components/about_components/about_mission/ab";
 import Donate from "@/components/about_components/donate/donate";
