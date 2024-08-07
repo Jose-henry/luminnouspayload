@@ -8,7 +8,8 @@ import sharp from 'sharp'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
-import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
+import { s3Storage } from '@payloadcms/storage-s3'
+//import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 //import { Post } from './collections/post'
 
 
@@ -29,7 +30,26 @@ export default buildConfig({
     url: process.env.DATABASE_URI || '',
   }),
   sharp,
-  plugins: process.env.BLOB_READ_WRITE_TOKEN
+  plugins: [s3Storage({ 
+    collections: { 
+      [Media.slug]: true,
+      'media': {
+        prefix: 'media',
+      },
+    },
+    bucket: process.env.S3_BUCKET || '',
+    config: {
+      credentials: {
+        accessKeyId: process.env.S3_ACCESS_KEY_ID || '',
+        secretAccessKey: process.env.S3_SECRET_KEY || '',
+      },
+      region: process.env.S3_REGION || '',
+      endpoint: process.env.S3_ENDPOINT || '',
+      forcePathStyle: true,
+      // ... Other S3 configuration options
+    },
+   }),
+  ], /*  process.env.BLOB_READ_WRITE_TOKEN
   ? [
       vercelBlobStorage({
         collections: {
@@ -38,5 +58,6 @@ export default buildConfig({
         token: process.env.BLOB_READ_WRITE_TOKEN || '',
       }),
     ]
-  : [],
+  :  [], */ //you can have more than one storage plugin blob and/or aws and/or supabase etc
+  //now i dont need the media folder anymore
 })
