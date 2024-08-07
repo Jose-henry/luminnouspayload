@@ -4,15 +4,11 @@ import path from 'path';
 import { buildConfig } from 'payload';
 import { fileURLToPath } from 'url';
 import sharp from 'sharp';
-import * as dotenv from 'dotenv';
 
 import { Users } from './collections/Users';
 import { Media } from './collections/Media';
 import { s3Storage } from '@payloadcms/storage-s3';
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob';
-
-// Load environment variables from .env file
-dotenv.config();
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -70,8 +66,7 @@ export default buildConfig({
     ] : []),
     // Fallback to local storage if neither Vercel Blob nor S3 is used
     ...(useVercelBlobStorage || useS3Storage ? [] : [
-      // Local storage configuration for Media collection
-      // Note: You might need to set up local storage configuration here if needed
+      // Local storage configuration for Media collection: plugins: []
     ]),
   ],
 });
