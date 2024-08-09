@@ -8,9 +8,9 @@ const nextConfig = {
           bodySizeLimit: '2mb',
         },
     },
-    eslint: {
-        ignoreDuringBuilds: true
-    },
+    // eslint: {
+    //     ignoreDuringBuilds: true
+    // },
 
 };
 
