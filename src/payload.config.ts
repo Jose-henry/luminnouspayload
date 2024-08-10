@@ -9,7 +9,7 @@ import sharp from 'sharp'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { s3Storage } from '@payloadcms/storage-s3'
-//import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
+import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 //import { Post } from './collections/post'
 
 
@@ -58,6 +58,6 @@ export default buildConfig({
         token: process.env.BLOB_READ_WRITE_TOKEN || '',
       }),
     ]
-  :  [], */ //you can have more than one storage plugin blob and/or aws and/or supabase etc
-  //now i dont need the media folder anymore
+  :  [], //you can have more than one storage plugin blob and/or aws and/or supabase etc
+  //now i dont need the media folder anymore */
 })
