@@ -60,4 +60,4 @@ export default buildConfig({
     ]
   :  [], //you can have more than one storage plugin blob and/or aws and/or supabase etc
   //now i dont need the media folder anymore */
-})
+});
