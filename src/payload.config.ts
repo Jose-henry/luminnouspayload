@@ -35,6 +35,7 @@ export default buildConfig({
       [Media.slug]: true,
       'media': {
         prefix: 'media',
+        //disablePayloadAccessControl: true,
       },
     },
     bucket: process.env.S3_BUCKET || '',

@@ -47,6 +47,9 @@ export interface UserAuthOperations {
  */
 export interface User {
   id: string;
+  firstName: string;
+  lastName: string;
+  roles?: 'admin'[] | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -65,6 +68,7 @@ export interface User {
 export interface Media {
   id: string;
   alt?: string | null;
+  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
