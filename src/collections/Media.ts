@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload';
 import path from 'path';
+import { revalidateTag } from 'next/cache';
 
 const getFileNameWithoutExtension = (fileName: string): string => {
   // Extract the base name without the extension and the dot
@@ -32,6 +33,12 @@ export const Media: CollectionConfig = {
         } else {
           console.log('No file found in req.file');  // Debugging line
         }
+      },
+    ],
+    afterChange: [
+      async ({ doc }) => {
+        // Trigger revalidation for media-related cache tags after a change
+        revalidateTag('media');
       },
     ],
   },

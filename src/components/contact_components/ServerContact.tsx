@@ -6,10 +6,14 @@
 // import { getPlaiceholder } from 'plaiceholder';
 import ClientContact from './ClientContact';
 import { fetchImageWithPlaceholder, preload } from "@/lib/actions/images/images.action";
-
+//import { unstable_noStore as noStore } from 'next/cache';
 
   
 export default async function ServerContact() {
+  //noStore() //dynamic prerendering
+
+
+
   // Preload the image data
   preload('office2');
 

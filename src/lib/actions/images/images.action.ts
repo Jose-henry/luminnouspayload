@@ -4,6 +4,7 @@ import { getPayload } from 'payload';
 import configPromise from '@payload-config';
 import { getPlaiceholder } from 'plaiceholder';
 import { cache } from 'react';
+import { revalidateTag } from 'next/cache';
 
 export const preload = (alt: string) => {
   void fetchImageWithPlaceholder(alt);
@@ -42,3 +43,9 @@ export const fetchImageWithPlaceholder = cache(async (alt: string) => {
     return { src: '', blurData: '' };
   }
 });
+
+
+
+export async function revalidateImage(alt: string) {
+  revalidateTag(alt);
+}
