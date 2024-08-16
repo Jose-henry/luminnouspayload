@@ -3,7 +3,6 @@ import Join from "@/components/team_components/team_text/team_text";
 import { Metadata } from "next";
 
 
-export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: "Team",
