@@ -11,7 +11,7 @@ export const preload = (alt: string) => {
 
 export const fetchImageWithPlaceholder = cache(async (alt: string) => {
   try {
-    const payload = await getPayloadHMR({ config: configPromise });
+    const payload = await getPayload({ config: configPromise });
     const supabaseBaseUrl = process.env.NEXT_PUBLIC_API_URL;
     const data = await payload.find({
       collection: 'media',
