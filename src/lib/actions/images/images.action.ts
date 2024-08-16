@@ -9,9 +9,9 @@ export const preload = (alt: string) => {
   void fetchImageWithPlaceholder(alt);
 };
 
-export const fetchImageWithPlaceholder = async (alt: string) => {
+export const fetchImageWithPlaceholder = cache(async (alt: string) => {
   try {
-    const payload = await getPayload({ config: configPromise });
+    const payload = await getPayloadHMR({ config: configPromise });
     const supabaseBaseUrl = process.env.NEXT_PUBLIC_API_URL;
     const data = await payload.find({
       collection: 'media',
@@ -41,4 +41,4 @@ export const fetchImageWithPlaceholder = async (alt: string) => {
     console.error(`Error fetching image with alt ${alt}:`, err.message);
     return { src: '', blurData: '' };
   }
-};
+});
