@@ -1,7 +1,7 @@
 import ServerAbout from "@/components/about_components/ServerAbout";
 import { Metadata } from "next";
 
-//export const dynamic = 'force-dynamic'
+export const dynamic = 'force-dynamic'
 export const metadata: Metadata = {
   title: "About",
 }
