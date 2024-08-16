@@ -22,19 +22,14 @@ export const fetchImageWithPlaceholder = cache(async (alt: string) => {
       const firstDoc = data.docs[0];
       if (firstDoc.url) {
         const fileName = firstDoc.url.split('/').pop();  // Extract the file name from the URL
-        // Append a cache-busting query parameter
-        const src = `${supabaseBaseUrl}/${fileName}?timestamp=${new Date().getTime()}`;
+        const src = `${supabaseBaseUrl}/${fileName}`; // Construct the new Supabase URL
         
-        // Log the URL to check what is being fetched
-        console.log('Fetching from:', src);
-        
-        const buffer = await fetch(src).then(async (res) => {
-          console.log('Response headers:', res.headers);  // Log headers to inspect caching
-          return Buffer.from(await res.arrayBuffer());
-        });
-        
+        const buffer = await fetch(src).then(async (res) =>
+          Buffer.from(await res.arrayBuffer())
+        );
         const { base64 } = await getPlaiceholder(buffer);
 
+        //console.log({ src, blurData: base64 });
         return { src, blurData: base64 };
       } else {
         throw new Error('No valid URL found in the document.');
