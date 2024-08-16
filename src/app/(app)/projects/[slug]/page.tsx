@@ -50,7 +50,7 @@ export default async function Projects({ params }: { params: { slug: string } })
 
  */
 
-
+export const dynamic = 'force-dynamic'
 export default function Projects() {
 
 
