@@ -23,7 +23,7 @@ export const fetchImageWithPlaceholder = cache(async (alt: string) => {
       const firstDoc = data.docs[0];
       if (firstDoc.url) {
         const fileName = firstDoc.url.split('/').pop();  // Extract the file name from the URL
-        const src = `${supabaseBaseUrl}/${fileName}`; // Construct the new Supabase URL
+        const src = `${supabaseBaseUrl}/${fileName}?timestamp=${new Date().getTime()}`; // Construct the new Supabase URL
         
         const buffer = await fetch(src).then(async (res) =>
           Buffer.from(await res.arrayBuffer())
