@@ -35,7 +35,7 @@ export const Media: CollectionConfig = {
         }
       },
     ],
-   /*  afterChange: [
+    afterChange: [
       async ({ doc }) => {
         // Trigger revalidation for the cache tag based on 'alt' field
         if (doc.alt) {
@@ -65,6 +65,6 @@ export const Media: CollectionConfig = {
         }
         console.log('Operation type:', operation);  // Debugging line
       },
-    ], */
+    ],
   },
 };
