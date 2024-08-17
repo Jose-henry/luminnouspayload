@@ -29,7 +29,7 @@ export const fetchImageWithPlaceholder = cache(async (alt: string) => {
           Buffer.from(await res.arrayBuffer())
         );
         const { base64 } = await getPlaiceholder(buffer);
-
+        //revalidateTag(alt); //could be used to revalidate images based on their alt tag, but could cause heavy load on server
         //console.log({ src, blurData: base64 });
         return { src, blurData: base64 };
       } else {
@@ -45,7 +45,7 @@ export const fetchImageWithPlaceholder = cache(async (alt: string) => {
 });
 
 
-
+//could be used to revalidate images based on their alt tag, but could cause heavy load on server if fetched data are plenty, then call it in any react server component
 export async function revalidateImage(alt: string) {
   revalidateTag(alt);
 }

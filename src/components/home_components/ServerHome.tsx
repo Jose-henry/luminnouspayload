@@ -12,20 +12,10 @@ import Mission from "./MissionStatement/mission";
 
 
 export default async function ServerHome() {
-  //revalidate images
-  revalidateImage('bg1');
-  revalidateImage('bg2');
-  revalidateImage('bg3');
-  revalidateImage('yellow');
-  revalidateImage('yellow2');
-  revalidateImage('kero');
-  revalidateImage('love1');
-  revalidateImage('love2');
-  revalidateImage('love3');
-  revalidateImage('post1');
-  revalidateImage('post2');
-  revalidateImage('post3');
 
+
+  //revalidateImage('office2'); //could be used to revalidate images based on their alt tag, but could cause heavy load on server
+  
    // Preload the image data
    preload('bg1');
    preload('bg2');
