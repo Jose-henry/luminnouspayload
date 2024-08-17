@@ -103,7 +103,7 @@ const Gallery: React.FC<GalleryProps> = ({
                         <div style={{ position: 'relative' }}>
                         <Suspense>
                             <Image 
-                                src={image.src ? image.src : Default} 
+                                src={image.src ? image.src : ""} 
                                 alt={captions[index]} 
                                 fill 
                                 quality={100} 

@@ -57,13 +57,13 @@ export default function Outline({
                     </div>
                     <div className={`${styles.div2} ${styles.style1}`}>
                     <Suspense>
-                        <Image src={ outlinesrc1 ? outlinesrc1 : Default} alt="Test" quality={100} fill style={{objectFit: 'cover', objectPosition: 'center'}} 
+                        <Image src={ outlinesrc1 ? outlinesrc1 : ""} alt="Test" quality={100} fill style={{objectFit: 'cover', objectPosition: 'center'}} 
                         loader={customLoader} placeholder='blur' blurDataURL={ outlineblurData1 ? outlineblurData1 : ''}></Image>
                     </Suspense>
                     </div>
                     <div className={`${styles.div3} ${styles.style2}`}>
                     <Suspense>
-                        <Image src={ outlinesrc2 ? outlinesrc2 : Default} alt="Test" quality={100} fill style={{objectFit: 'cover', objectPosition: 'center'}} loader={customLoader} placeholder='blur' blurDataURL={ outlineblurData2 ? outlineblurData2 : ''}></Image>
+                        <Image src={ outlinesrc2 ? outlinesrc2 : ""} alt="Test" quality={100} fill style={{objectFit: 'cover', objectPosition: 'center'}} loader={customLoader} placeholder='blur' blurDataURL={ outlineblurData2 ? outlineblurData2 : ''}></Image>
                         </Suspense>
                     </div>
                 </div>
@@ -79,11 +79,11 @@ export default function Outline({
                     </div>
                     <div className={`${styles.div2} ${styles.style3}`}>
                     <Suspense>
-                        <Image src={ outlinesrc3 ? outlinesrc3 : Default} alt="Test" quality={100} fill style={{objectFit: 'cover', objectPosition: 'center'}} loader={customLoader} placeholder='blur' blurDataURL={ outlineblurData3 ? outlineblurData3 : ''}></Image></Suspense>
+                        <Image src={ outlinesrc3 ? outlinesrc3 : ""} alt="Test" quality={100} fill style={{objectFit: 'cover', objectPosition: 'center'}} loader={customLoader} placeholder='blur' blurDataURL={ outlineblurData3 ? outlineblurData3 : ''}></Image></Suspense>
                     </div>
                     <div className={`${styles.div3} ${styles.style4}`}>
                     <Suspense>
-                        <Image src={ outlinesrc4 ? outlinesrc4 : Default} alt="Test" quality={100} fill style={{objectFit: 'cover', objectPosition: 'center'}} loader={customLoader} placeholder='blur' blurDataURL={ outlineblurData4 ? outlineblurData4 : ''}></Image></Suspense>
+                        <Image src={ outlinesrc4 ? outlinesrc4 : ""} alt="Test" quality={100} fill style={{objectFit: 'cover', objectPosition: 'center'}} loader={customLoader} placeholder='blur' blurDataURL={ outlineblurData4 ? outlineblurData4 : ''}></Image></Suspense>
                     </div>
                 </div>
             </div>
