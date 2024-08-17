@@ -2,7 +2,7 @@ import ServerHome from "@/components/home_components/ServerHome";
 
 
 //export const dynamic = 'force-dynamic'
-export const revalidate = 3600; // 30 minutes
+export const revalidate = 30; // 30s
 
 export default function Home() {
   return (

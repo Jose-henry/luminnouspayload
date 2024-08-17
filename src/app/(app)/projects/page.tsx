@@ -5,7 +5,7 @@ import { Metadata } from "next";
 
 //export const dynamic = 'force-dynamic'
 
-export const revalidate = 3600 // 30 minutes
+export const revalidate = 60 // 1 minutes
 
 
 export const metadata: Metadata = {
