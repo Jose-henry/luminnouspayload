@@ -3,14 +3,14 @@ import { getPayloadHMR } from '@payloadcms/next/utilities';
 import { getPayload } from 'payload';
 import configPromise from '@payload-config';
 import { getPlaiceholder } from 'plaiceholder';
-//import { cache } from 'react';
+import { cache } from 'react';
 import { revalidateTag } from 'next/cache';
 
 export const preload = (alt: string) => {
   void fetchImageWithPlaceholder(alt);
 };
 
-export const fetchImageWithPlaceholder = async (alt: string) => {
+export const fetchImageWithPlaceholder = cache(async (alt: string) => {
   try {
     const payload = await getPayload({ config: configPromise });
     const supabaseBaseUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -23,7 +23,7 @@ export const fetchImageWithPlaceholder = async (alt: string) => {
       const firstDoc = data.docs[0];
       if (firstDoc.url) {
         const fileName = firstDoc.url.split('/').pop();  // Extract the file name from the URL
-        const src = `${supabaseBaseUrl}/${fileName}`; // Construct the new Supabase URL
+        const src = `${supabaseBaseUrl}/${fileName}?timestamp=${new Date().getTime()}`; // Construct the new Supabase URL
         
         const buffer = await fetch(src).then(async (res) =>
           Buffer.from(await res.arrayBuffer())
@@ -42,7 +42,7 @@ export const fetchImageWithPlaceholder = async (alt: string) => {
     console.error(`Error fetching image with alt ${alt}:`, err.message);
     return { src: '', blurData: '' };
   }
-};
+});
 
 
 //could be used to revalidate images based on their alt tag, but could cause heavy load on server if fetched data are plenty, then call it in any react server component
