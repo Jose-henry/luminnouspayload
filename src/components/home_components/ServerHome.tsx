@@ -1,6 +1,6 @@
 'use server'
 
-import { fetchImageWithPlaceholder, preload } from "@/lib/actions/images/images.action";
+import { fetchImageWithPlaceholder, preload, revalidateImage } from "@/lib/actions/images/images.action";
 import Hero from "./HeroSection/hero";
 import About from "./AboutSection/about";
 import Impact from "./ImpactSection/impact";
@@ -12,6 +12,20 @@ import Mission from "./MissionStatement/mission";
 
 
 export default async function ServerHome() {
+  //revalidate images
+  revalidateImage('bg1');
+  revalidateImage('bg2');
+  revalidateImage('bg3');
+  revalidateImage('yellow');
+  revalidateImage('yellow2');
+  revalidateImage('kero');
+  revalidateImage('love1');
+  revalidateImage('love2');
+  revalidateImage('love3');
+  revalidateImage('post1');
+  revalidateImage('post2');
+  revalidateImage('post3');
+
    // Preload the image data
    preload('bg1');
    preload('bg2');

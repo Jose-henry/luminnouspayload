@@ -31,7 +31,6 @@ export const fetchImageWithPlaceholder = cache(async (alt: string) => {
         const { base64 } = await getPlaiceholder(buffer);
 
         //console.log({ src, blurData: base64 });
-        revalidateTag(alt);
         return { src, blurData: base64 };
       } else {
         throw new Error('No valid URL found in the document.');
