@@ -10,7 +10,57 @@ export const preload = (alt: string) => {
   void fetchImageWithPlaceholder(alt);
 };
 
+
+
+
+
+
 export const fetchImageWithPlaceholder = cache(async (alt: string) => {
+  try {
+    const payload = await getPayload({ config: configPromise });
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const data = await payload.find({
+      collection: 'media',
+      where: { alt: { equals: alt } },
+    })
+
+    if (data.docs && data.docs.length > 0) {
+      const firstDoc = data.docs[0]
+      if (firstDoc.url) {
+        const src = `${apiUrl}${firstDoc.url.startsWith('/') ? '' : '/'}${firstDoc.url}`;
+        const buffer = await fetch(src).then(async (res) =>
+          Buffer.from(await res.arrayBuffer())
+        );
+        const { base64 } = await getPlaiceholder(buffer);
+
+        return { src, blurData: base64 };
+      } else {
+        throw new Error('No valid URL found in the document.');
+      }
+    } else {
+      throw new Error(`No media found with the specified alt text: ${alt}`);
+    }
+  } catch (err: any) {
+    console.error(`Error fetching image with alt ${alt}:`, err.message);
+    return { src: '', blurData: '' };
+    
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* export const fetchImageWithPlaceholder = cache(async (alt: string) => {
   try {
     const payload = await getPayload({ config: configPromise });
     const supabaseBaseUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -42,7 +92,7 @@ export const fetchImageWithPlaceholder = cache(async (alt: string) => {
     console.error(`Error fetching image with alt ${alt}:`, err.message);
     return { src: '', blurData: '' };
   }
-});
+}); */
 
 
 //could be used to revalidate images based on their alt tag, but could cause heavy load on server if fetched data are plenty, then call it in any react server component
