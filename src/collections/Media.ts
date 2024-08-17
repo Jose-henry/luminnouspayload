@@ -50,7 +50,7 @@ export const Media: CollectionConfig = {
         }
       },
     ],
-    afterOperation: [
+    /* afterOperation: [
       async ({ result, operation }) => {
         // Check if the result includes the document details and if it has an 'alt' field
         if (result && result.doc && result.doc.alt) {
@@ -65,6 +65,6 @@ export const Media: CollectionConfig = {
         }
         console.log('Operation type:', operation);  // Debugging line
       },
-    ],
+    ], */
   },
 };
