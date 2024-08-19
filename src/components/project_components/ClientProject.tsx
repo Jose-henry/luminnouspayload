@@ -2,15 +2,15 @@
 
 import React, { useEffect } from 'react';
 
-//import Gallery from "@/components/project_components/gallery_component/gallery";
+import Gallery from "@/components/project_components/gallery_component/gallery";
 import Intro from "@/components/project_components/intro_component/intro";
 import Outline from "@/components/project_components/project_outline/outline";
 import dynamic from 'next/dynamic';
 
 
-const Gallery = dynamic(() => import('@/components/project_components/gallery_component/gallery'), {
-  ssr: true
-})
+// const Gallery = dynamic(() => import('@/components/project_components/gallery_component/gallery'), {
+//   ssr: true
+// })
 
 // const Outline = dynamic(() => import('@/components/project_components/project_outline/outline'), {
 //   ssr: true
