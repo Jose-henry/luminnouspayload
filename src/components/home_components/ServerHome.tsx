@@ -1,14 +1,24 @@
 'use server'
 
 import { fetchImageWithPlaceholder, preload, revalidateImage } from "@/lib/actions/images/images.action";
-import Hero from "./HeroSection/hero";
-import About from "./AboutSection/about";
+// import Hero from "./HeroSection/hero";
+// import About from "./AboutSection/about";
 import Impact from "./ImpactSection/impact";
-import Contribute from "./ContributeSection/contribute";
+// import Contribute from "./ContributeSection/contribute";
 import PageText2 from "../PageText/pageText2";
-import Improve from "./ImproveSection/improve";
-import Update from "./UpdateSection/update";
+// import Improve from "./ImproveSection/improve";
+// import Update from "./UpdateSection/update";
 import Mission from "./MissionStatement/mission";
+import dynamic from "next/dynamic";
+
+const Hero = dynamic(() => import('./HeroSection/hero'), { ssr: true });
+const About = dynamic(() => import('./AboutSection/about'), { ssr: true });
+//const Impact = dynamic(() => import('./ImpactSection/impact'), { ssr: false });
+const Contribute = dynamic(() => import('./ContributeSection/contribute'), { ssr: true });
+//const PageText2 = dynamic(() => import('../PageText/pageText2'), { ssr: false });
+const Improve = dynamic(() => import('./ImproveSection/improve'), { ssr: true });
+const Update = dynamic(() => import('./UpdateSection/update'), { ssr: true });
+//const Mission = dynamic(() => import('./MissionStatement/mission'), { ssr: false });
 
 
 export default async function ServerHome() {
