@@ -16,6 +16,9 @@ const Outline = dynamic(() => import('@/components/project_components/project_ou
   ssr: true
 })
 
+const Intro = dynamic(() => import('@/components/project_components/intro_component/intro'), {
+  ssr: false
+})
 
 interface clientProps {
   gallerysrc1: string; 
