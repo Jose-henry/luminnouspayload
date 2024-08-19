@@ -5,7 +5,7 @@ import { Metadata } from "next";
 
 //export const dynamic = 'force-dynamic'
 
-export const revalidate = 3600 //1 hour //604800  1 week
+export const revalidate = 120 //1 hour //604800  1 week
 
 //const ServerProject = dynamic(() => import('@/components/project_components/ServerProject'), { ssr: true })
 
