@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 //export const dynamic = 'force-dynamic'
 
-export const revalidate = 0 // 1 week
+export const revalidate = 120 // 1 week
 
 
 export const metadata: Metadata = {
