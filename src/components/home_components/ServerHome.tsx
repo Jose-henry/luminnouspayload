@@ -1,24 +1,24 @@
 'use server'
 
-import { fetchImageWithPlaceholder, preload, revalidateImage } from "@/lib/actions/images/images.action";
+import { fetchImageWithPlaceholder, preload } from "@/lib/actions/images/images.action";
 //import Hero from "./HeroSection/hero";
 //import About from "./AboutSection/about";
-import Impact from "./ImpactSection/impact";
+//import Impact from "./ImpactSection/impact";
 //import Contribute from "./ContributeSection/contribute";
-import PageText2 from "../PageText/pageText2";
+//import PageText2 from "../PageText/pageText2";
 //import Improve from "./ImproveSection/improve";
 //import Update from "./UpdateSection/update";
-import Mission from "./MissionStatement/mission";
+//import Mission from "./MissionStatement/mission";
 import dynamic from "next/dynamic";
 
 const Hero = dynamic(() => import('./HeroSection/hero'), { ssr: false });
 const About = dynamic(() => import('./AboutSection/about'), { ssr: false });
-// //const Impact = dynamic(() => import('./ImpactSection/impact'), { ssr: false });
+const Impact = dynamic(() => import('./ImpactSection/impact'), { ssr: false });
 const Contribute = dynamic(() => import('./ContributeSection/contribute'), { ssr: false });
-// //const PageText2 = dynamic(() => import('../PageText/pageText2'), { ssr: false });
+const PageText2 = dynamic(() => import('../PageText/pageText2'), { ssr: false });
 const Improve = dynamic(() => import('./ImproveSection/improve'), { ssr: false });
 const Update = dynamic(() => import('./UpdateSection/update'), { ssr: false });
-// //const Mission = dynamic(() => import('./MissionStatement/mission'), { ssr: false });
+const Mission = dynamic(() => import('./MissionStatement/mission'), { ssr: false });
 
 
 export default async function ServerHome() {

@@ -1,5 +1,5 @@
 import ServerHome from "@/components/home_components/ServerHome";
-import Loading from "@/components/loading/loading";
+//import Loading from "@/components/loading/loading";
 //import dynamic from "next/dynamic";
 
 
