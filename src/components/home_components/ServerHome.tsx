@@ -9,7 +9,7 @@ import { fetchImageWithPlaceholder, preload } from "@/lib/actions/images/images.
 //import Improve from "./ImproveSection/improve";
 //import Update from "./UpdateSection/update";
 //import Mission from "./MissionStatement/mission";
-import dynamic from "next/dynamic";
+import dynamic from "next/dynamic"
 
 const Hero = dynamic(() => import('./HeroSection/hero'), { ssr: false });
 const About = dynamic(() => import('./AboutSection/about'), { ssr: false });
