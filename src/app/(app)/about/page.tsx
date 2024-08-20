@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 
 //export const revalidate = 60 // 1 week
 
-const ServerAbout = dynamic(() => import('@/components/about_components/ServerAbout'), { ssr: true })
+const ServerAbout = dynamic(() => import('@/components/about_components/ServerAbout'), { ssr: false })
 
 
 export const metadata: Metadata = {
