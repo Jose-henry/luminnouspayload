@@ -1,6 +1,7 @@
 //import ServerHome from "@/components/home_components/ServerHome";
+import Loading from "@/components/loading/loading";
 import dynamic from "next/dynamic";
-
+import { Suspense } from "react";
 
 const ServerHome = dynamic(() => import('@/components/home_components/ServerHome'), { ssr: false })
 //export const dynamic = 'force-dynamic'
@@ -8,6 +9,8 @@ const ServerHome = dynamic(() => import('@/components/home_components/ServerHome
 
 export default function Home() {
   return (
+    <Suspense fallback={<Loading />}>
     <ServerHome />
+    </Suspense>
   );
 }
