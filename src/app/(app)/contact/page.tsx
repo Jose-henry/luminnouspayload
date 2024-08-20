@@ -1,13 +1,13 @@
 
 import  { Metadata } from 'next'
-//import ServerContact from '@/components/contact_components/ServerContact';
-import dynamic from 'next/dynamic';
+import ServerContact from '@/components/contact_components/ServerContact';
+//import dynamic from 'next/dynamic';
 
 //export const dynamic = 'force-dynamic'
 
 /* export const revalidate = 604800 // 1 week; */
 
-const ServerContact = dynamic(() => import('@/components/contact_components/ServerContact'), { ssr: false })
+//const ServerContact = dynamic(() => import('@/components/contact_components/ServerContact'), { ssr: false })
 
 export const metadata: Metadata = {
   title: "Contact",
