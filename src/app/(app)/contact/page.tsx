@@ -5,7 +5,7 @@ import ServerContact from '@/components/contact_components/ServerContact';
 
 //export const dynamic = 'force-dynamic'
 
-//export const revalidate = 604800 // 1 week;
+/* export const revalidate = 604800 // 1 week; */
 
 export const metadata: Metadata = {
   title: "Contact",
