@@ -1,14 +1,64 @@
 'use client';
+
 import Image from "next/image";
-import styles from "./gallery.module.css";
-import React, { Suspense } from "react"
-import Default from '@/assets/default.jpg'
-export const experimental_ppr = true
+import React, { useState, useEffect } from "react";
+import useMeasure from "react-use-measure";
+import { animate, AnimatePresence, motion, useMotionValue } from "framer-motion";
+export const experimental_ppr = true;
 
-
-
+// Custom loader for Next.js Image component
 export const customLoader = ({ src, width, quality }: { src: string; width: number; quality?: number }) => {
     return `${src}?w=${width}&q=${quality || 75}`;
+};
+
+interface CardProps {
+    image: string;
+    caption: string;
+    blurData: string;
+}
+
+const Card: React.FC<CardProps> = ({ image, caption, blurData }) => {
+    const [showOverlay, setShowOverlay] = useState(false);
+
+    return (
+        <motion.div
+            className="relative overflow-hidden h-[300px] min-w-[300px] bg-slate-400 rounded-xl flex justify-center items-center"
+            key={image}
+            onHoverStart={() => setShowOverlay(true)}
+            onHoverEnd={() => setShowOverlay(false)}
+        >
+            {/* Hover overlay */}
+            <AnimatePresence>
+                {showOverlay && (
+                    <motion.div
+                        className="absolute left-0 top-0 bottom-0 right-0 z-10 flex justify-center items-center"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                    >
+                        <div className="absolute bg-black pointer-events-none opacity-50 h-full w-full" />
+                        <motion.h1
+                            className="bg-white font-semibold text-sm z-10 px-3 py-2 rounded-full flex items-center gap-[0.5ch] hover:opacity-75"
+                            initial={{ y: 10 }}
+                            animate={{ y: 0 }}
+                            exit={{ y: 10 }}
+                        >
+                            <span>{caption}</span>
+                        </motion.h1>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+            <Image
+                src={image || ""}
+                alt={caption}
+                fill
+                style={{ objectFit: "cover" }}
+                loader={customLoader}
+                placeholder="blur"
+                blurDataURL={blurData || ""}
+            />
+        </motion.div>
+    );
 };
 
 interface GalleryProps {
@@ -37,6 +87,9 @@ interface GalleryProps {
     gallerysrc12?: string; 
     galleryblurData12?: string;
 }
+
+const FAST_DURATION = 10;
+const SLOW_DURATION = 20;
 
 const Gallery: React.FC<GalleryProps> = ({
     gallerysrc1,
@@ -94,30 +147,59 @@ const Gallery: React.FC<GalleryProps> = ({
         "Improved Market Life",
     ];
 
+    const [duration, setDuration] = useState(FAST_DURATION);
+    const [ref, { width }] = useMeasure();
+    const xTranslation = useMotionValue(0);
+    const [mustFinish, setMustFinish] = useState(false);
+    const [rerender, setRerender] = useState(false);
+
+    useEffect(() => {
+        let controls;
+        const finalPosition = -width / 2 - 8;
+
+        if (mustFinish) {
+            controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
+                ease: "linear",
+                duration: duration * (1 - xTranslation.get() / finalPosition),
+                onComplete: () => {
+                    setMustFinish(false);
+                    setRerender(!rerender);
+                },
+            });
+        } else {
+            controls = animate(xTranslation, [0, finalPosition], {
+                ease: "linear",
+                duration: duration,
+                repeat: Infinity,
+                repeatType: "loop",
+                repeatDelay: 0,
+            });
+        }
+        return controls?.stop;
+    }, [rerender, xTranslation, duration, width]);
+
     return (
-        <div className={styles.main_container}>
-            <h3>Lighting up the Dark Places!!!</h3>
-            <div className={styles.slide}>
-                {images.map((image, index) => (
-                    <div className={styles.pic} key={index}>
-                        <div style={{ position: 'relative' }}>
-                        <Suspense>
-                            <Image 
-                                src={image.src ? image.src : ""} 
-                                alt={captions[index]} 
-                                fill 
-                                quality={100} 
-                                style={{ objectFit: 'cover', objectPosition: 'center' }} 
-                                loader={customLoader} 
-                                placeholder='blur' 
-                                blurDataURL={image.blurData ? image.blurData : ''} 
-                            /> </Suspense>
-                        </div>
-                        <p>{captions[index]}</p>
-                    </div>
-                ))}
+        <main className="py-8">
+            <div className="sticky top-[73px]">
+                <motion.div
+                    className="flex gap-4"
+                    style={{ x: xTranslation }}
+                    ref={ref}
+                    onHoverStart={() => {
+                        setMustFinish(true);
+                        setDuration(SLOW_DURATION);
+                    }}
+                    onHoverEnd={() => {
+                        setMustFinish(true);
+                        setDuration(FAST_DURATION);
+                    }}
+                >
+                    {[...images, ...images].map((item, idx) => (
+                        <Card image={item.src || ""} caption={captions[idx]} blurData={item.blurData || ""} key={idx} />
+                    ))}
+                </motion.div>
             </div>
-        </div>
+        </main>
     );
 };
 

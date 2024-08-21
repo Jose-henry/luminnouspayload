@@ -11,11 +11,11 @@ import Impact from "./ImpactSection/impact";
 import PageText2 from "../PageText/pageText2";
 import dynamic from "next/dynamic"
 
-const Hero = dynamic(() => import('./HeroSection/hero'), { ssr: false });
-const About = dynamic(() => import('./AboutSection/about'), { ssr: false });
-const Contribute = dynamic(() => import('./ContributeSection/contribute'), { ssr: false });
-const Improve = dynamic(() => import('./ImproveSection/improve'), { ssr: false });
-const Update = dynamic(() => import('./UpdateSection/update'), { ssr: false });
+const Hero = dynamic(() => import('./HeroSection/hero'), { ssr: true });
+const About = dynamic(() => import('./AboutSection/about'), { ssr: true });
+const Contribute = dynamic(() => import('./ContributeSection/contribute'), { ssr: true });
+const Improve = dynamic(() => import('./ImproveSection/improve'), { ssr: true });
+const Update = dynamic(() => import('./UpdateSection/update'), { ssr: true });
 // const Mission = dynamic(() => import('./MissionStatement/mission'), { ssr: false });
 // const Impact = dynamic(() => import('./ImpactSection/impact'), { ssr: false });
 // const PageText2 = dynamic(() => import('../PageText/pageText2'), { ssr: false });

@@ -9,11 +9,11 @@ import dynamic from 'next/dynamic';
 
 
 const Gallery = dynamic(() => import('@/components/project_components/gallery_component/gallery'), {
-  ssr: false
+  ssr: true
 })
 
 const Outline = dynamic(() => import('@/components/project_components/project_outline/outline'), {
-  ssr: false
+  ssr: true
 })
 
 // const Intro = dynamic(() => import('@/components/project_components/intro_component/intro'), {

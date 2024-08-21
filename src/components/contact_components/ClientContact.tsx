@@ -13,7 +13,7 @@ export const experimental_ppr = true
 
 
 export const customLoader = ({ src, width, quality }: { src: string; width: number; quality?: number }) => {
-    return `${src}?w=${width}&q=${quality || 100}`;
+    return `${src}?w=${width}&q=${quality || 75}`;
 };
 
 export default function ClientContact({ src, blurData }: { src?: string, blurData?: string }) {

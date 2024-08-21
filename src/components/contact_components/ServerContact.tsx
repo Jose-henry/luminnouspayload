@@ -10,7 +10,7 @@ import { fetchImageWithPlaceholder, preload } from "@/lib/actions/images/images.
 import dynamic from 'next/dynamic';
   
 
-const ClientContact = dynamic(() => import('./ClientContact'), { ssr: false });
+const ClientContact = dynamic(() => import('./ClientContact'), { ssr: true });
 export default async function ServerContact() {
   //noStore() //dynamic prerendering
 

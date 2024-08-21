@@ -7,9 +7,9 @@ import Story from "@/components/about_components/story/story";
 import Testimonial from "@/components/about_components/testimonial_section/testimonial";
 import dynamic from 'next/dynamic';
 
-const AB = dynamic(() => import('@/components/about_components/about_mission/ab'), { ssr: false });
-const Project = dynamic(() => import('@/components/about_components/Projects/project'), { ssr: false });
-const Donate = dynamic(() => import('@/components/about_components/donate/donate'), { ssr: false });
+const AB = dynamic(() => import('@/components/about_components/about_mission/ab'), { ssr: true });
+const Project = dynamic(() => import('@/components/about_components/Projects/project'), { ssr: true });
+const Donate = dynamic(() => import('@/components/about_components/donate/donate'), { ssr: true });
 
 interface aboutProps{
   projectsrc1: string; 
