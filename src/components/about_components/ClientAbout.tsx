@@ -1,15 +1,15 @@
 'use client';
 import React, { useEffect } from 'react';
-// import Project from "@/components/about_components/Projects/project";
-// import AB from "@/components/about_components/about_mission/ab";
-// import Donate from "@/components/about_components/donate/donate";
+import Project from "@/components/about_components/Projects/project";
+import AB from "@/components/about_components/about_mission/ab";
+import Donate from "@/components/about_components/donate/donate";
 import Story from "@/components/about_components/story/story";
 import Testimonial from "@/components/about_components/testimonial_section/testimonial";
 import dynamic from 'next/dynamic';
 
-const AB = dynamic(() => import('@/components/about_components/about_mission/ab'), { ssr: true });
-const Project = dynamic(() => import('@/components/about_components/Projects/project'), { ssr: true });
-const Donate = dynamic(() => import('@/components/about_components/donate/donate'), { ssr: true });
+// const AB = dynamic(() => import('@/components/about_components/about_mission/ab'), { ssr: true });
+// const Project = dynamic(() => import('@/components/about_components/Projects/project'), { ssr: true });
+// const Donate = dynamic(() => import('@/components/about_components/donate/donate'), { ssr: true });
 
 interface aboutProps{
   projectsrc1: string; 
